@@ -1,0 +1,15 @@
+public class MainApp {
+    public static void main(String[] args) {
+
+        AddEmployee.addEmployee("John", 50000, "IT");
+        AddEmployee.addEmployee("Alice", 60000, "HR");
+
+        ViewEmployees.viewEmployees();
+
+        UpdateEmployee.updateEmployee(1, 70000);
+
+        DeleteEmployee.deleteEmployee(2);
+
+        ViewEmployees.viewEmployees();
+    }
+}
