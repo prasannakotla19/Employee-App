@@ -1,0 +1,21 @@
+import java.sql.*;
+
+public class UpdateEmployee {
+    public static void updateEmployee(int id, double salary) {
+        try {
+            Connection con = DBConnection.getConnection();
+            String query = "UPDATE employee SET salary=? WHERE id=?";
+
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setDouble(1, salary);
+            ps.setInt(2, id);
+
+            ps.executeUpdate();
+            System.out.println("Employee Updated!");
+
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
